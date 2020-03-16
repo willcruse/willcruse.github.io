@@ -1,26 +1,42 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import logo from "./willPic.jpg";
+import "bootstrap/dist/css/bootstrap.min.css";
+import { Container, Row, Col, Card } from "react-bootstrap";
+import GitHubProjects from "./GitHubProjects"
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Container fluid style={{marginTop: "1rem"}}>
+      <Row>
+        <Col>
+          <ProfileComp />
+        </Col>
+        <Col>
+        </Col>
+        <Col>
+          <GitHubProjects />
+        </Col>
+      </Row>
+    </Container>
   );
 }
+
+const ProfileComp = () => {
+  return (
+    <Card style={{maxWidth: '15rem'}}>
+      <Card.Img src={logo} variant="top"/>
+      <Card.Header><b>Will Cruse</b></Card.Header>
+      <Card.Body>
+        <Card.Title><b>About Me</b></Card.Title>
+        <Card.Text>
+          I am a second year Computer Science student at the University of Bath.
+        </Card.Text>
+      </Card.Body>
+    </Card>
+  );
+};
+
+
+
 
 export default App;
